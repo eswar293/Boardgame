@@ -98,11 +98,11 @@
     		<plugin>
       			<groupId>org.apache.maven.plugins</groupId>
       			<artifactId>maven-compiler-plugin</artifactId>
-      			<version>3.13.0</version> <!-- latest as of 2025 -->
+      				<version>3.13.0</version> <!-- latest as of 2025 -->
       			<configuration>
-        		<source>17</source>      <!-- or 21, depending on your JDK -->
-        		<target>17</target>
-        		<release>17</release>
+        				<source>17</source>      <!-- or 21, depending on your JDK -->
+        				<target>17</target>
+        				<release>17</release>
       			</configuration>
     		</plugin>
   		</plugins>
