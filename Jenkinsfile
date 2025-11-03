@@ -148,16 +148,6 @@ pipeline {
                 </body>
                 </html>
             """
-
-            emailext (
-                subject: "${jobName} - Build ${buildNumber} - ${pipelineStatus.toUpperCase()}",
-                body: body,
-                to: 'eswarpkumar@gmail.com',
-                from: 'jenkins@example.com',
-                replyTo: 'jenkins@example.com',
-                mimeType: 'text/html',
-                attachmentsPattern: 'trivy-image-report.html'
-            )
         }
     }
 }
