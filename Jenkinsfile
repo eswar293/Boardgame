@@ -12,6 +12,12 @@ pipeline {
     }
 
     stages {
+        stage('Clean WorkSpace') {
+            steps {
+                cleanWs()
+            }
+        }
+        
         stage('Git Checkout') {
             steps {
                git branch: 'main', credentialsId: 'git-cred', url: 'https://github.com/eswar293/Boardgame.git'
