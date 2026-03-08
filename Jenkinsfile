@@ -77,7 +77,7 @@ pipeline {
             steps {
                script {
                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
-                            sh "docker build -t eswar1241/boardgame:latest ."
+                            sh "docker build -t eswar1241/boardgame:v0.5 ."
                     }
                }
             }
@@ -85,7 +85,7 @@ pipeline {
         
         stage('Docker Image Scan') {
             steps {
-                sh "trivy image --format table -o trivy-image-report.html eswar1241/boardgame:latest "
+                sh "trivy image --format table -o trivy-image-report.html eswar1241/boardgame:v0.5 "
             }
         }
         
@@ -93,7 +93,7 @@ pipeline {
             steps {
                script {
                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
-                            sh "docker push eswar1241/boardgame:latest"
+                            sh "docker push eswar1241/boardgame:v0.5"
                     }
                }
             }
